@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy-basic": "gcloud beta functions deploy helloEvent",
+    "deploy-with-topic": "gcloud beta functions deploy doStuffThenPubSub --entry-point doStuffThenPubSub --trigger-resource my-topic --trigger-event google.pubsub.topic.publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

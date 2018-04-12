@@ -3,16 +3,14 @@
 const PubSub = require(`@google-cloud/pubsub`);
 
 /**
- * Background Cloud Function to be triggered by Pub/Sub.
+ * Basic Cloud Function.
  *
  * @param {object} event The Cloud Functions event.
  * @param {function} callback The callback function.
  */
-exports.helloPubSub = (event, callback) => {
-  const pubsubMessage = event.data;
-  const name = pubsubMessage.data ? Buffer.from(pubsubMessage.data, 'base64').toString() : 'World';
+exports.helloEvent = (event, callback) => {
 
-  console.log(`Hello, ${name}!`);
+  console.log('Hello, here\'s the data I received',event.data);
 
   callback();
 };
@@ -35,9 +33,6 @@ exports.doStuffThenPubSub = (event, callback) => {
 	// Creates a client
 	const pubsub = new PubSub();
 
-	/**
-	 * TODO(developer): Uncomment the following lines to run the sample.
-	 */
 	const topicName = 'naguib-testing-2';
 	const data = JSON.stringify({ "sourceTopic": name });
 
