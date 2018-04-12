@@ -3,7 +3,7 @@
 ## Usage
 
 ### `helloEvent()`
-A simple basic function that prints out the event data
+A simple basic function that prints out the event data triggered by http
 
 ##### To deploy the function `yarn deploy-with-env`
 

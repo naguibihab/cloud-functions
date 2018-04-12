@@ -3,16 +3,16 @@
 const PubSub = require(`@google-cloud/pubsub`);
 
 /**
- * Basic Cloud Function.
+ * HTTP Cloud Function.
  *
- * @param {object} event The Cloud Functions event.
- * @param {function} callback The callback function.
+ * @param {Object} req Cloud Function request context.
+ * @param {Object} res Cloud Function response context.
  */
-exports.helloEvent = (event, callback) => {
+exports.helloEvent = (req, res) => {
 
-  console.log('Hello, here\'s the data I received',event.data);
+  console.log('Hello, here\'s the data I received',req.body);
 
-  callback();
+	res.send("I Work!")
 };
 
 /**
