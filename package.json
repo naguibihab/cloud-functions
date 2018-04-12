@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy-basic": "gcloud beta functions deploy helloEvent",
+    "deploy-basic": "gcloud beta functions deploy helloEvent --trigger-http",
     "deploy-with-topic": "gcloud beta functions deploy doStuffThenPubSub --entry-point doStuffThenPubSub --trigger-resource my-topic --trigger-event google.pubsub.topic.publish",
+    "deploy-with-env": "set MY_ENV=test&& gcloud beta functions deploy helloEnvVariable --entry-point helloEnvVariable --trigger-http",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

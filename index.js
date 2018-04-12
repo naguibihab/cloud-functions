@@ -55,3 +55,21 @@ exports.doStuffThenPubSub = (event, callback) => {
 
   callback();
 };
+
+/**
+ * HTTP  Cloud Function that prints Env Variables.
+ *
+ * @param {Object} req Cloud Function request context.
+ * @param {Object} res Cloud Function response context.
+ */
+exports.helloEnvVariable = (req, res) => {
+	let envVariable = process.env.MY_ENV;
+
+	if(envVariable){
+  	console.log('I can see your env variables <--(o).(o)--> ',envVariable,process.env);	
+	} else {
+		console.log('I can\'t see your env variables <--(-).(-)--> ',envVariable,process.env);	
+	}
+
+  res.send("Env received: "+envVariable);
+};

@@ -10,4 +10,9 @@ A simple basic function that prints out the event data triggered by http
 ### `doStuffThenPubSub()`
 Here we have two functions that are working off two pubsubs. Pubsub1 triggers doStuffThenPubSub which publishes to Pubsub2 which triggers helloPubSub
 
-##### To deploy the function `yarn deploy-with-topic``
+##### To deploy the function `yarn deploy-with-topic`
+
+### `helloEnvVariable()`
+Prints out the environment variables passed from NPM
+
+##### To deploy the function `yarn deploy-with-env`
